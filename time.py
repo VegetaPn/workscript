@@ -10,6 +10,8 @@ try:
     if args[1] == 'now':
         datetime_now = datetime.now()
         sys.stdout.write(datetime_now.strftime('%Y-%m-%d %H:%M:%S.%f')[:-3])
+    elif args[1] == 'now_st':
+        sys.stdout.write(str(int(datetime.now().timestamp()) * 1000))
     elif len(args[1]) == 13:
         sys.stdout.write(datetime.fromtimestamp(int(args[1]) / 1000).strftime('%Y-%m-%d %H:%M:%S.%f')[:-3])
     elif len(args[1]) == 10:
